@@ -37,6 +37,19 @@
             display: block;
             margin: 0 auto;
         }
+        .inventory {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            justify-content: center;
+            padding: 1em 0;
+        }
+        .inventory img {
+            width: 100%;
+            max-width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
         footer {
             background: #333;
             color: white;
@@ -54,17 +67,24 @@
     </header>
     <nav>
         <a href="#home">Home</a>
-        <a href="#about">About</a>
         <a href="#inventory">Inventory</a>
         <a href="#contact">Contact</a>
     </nav>
     <main>
         <h2>Home</h2>
         <p>Welcome to Tehran Motors, your trusted car dealership. We offer a wide range of vehicles to suit all your needs.</p>
-        <img src="https://lh3.googleusercontent.com/p/AF1QipOLInPin6-cTBQNeIVd-ThLilm764vFnS5nRWr7=s1360-w1360-h1020" alt="Tehran Motor" class="car-image">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipOLInPin6-cTBQNeIVd-ThLilm764vFnS5nRWr7=s1360-w1360-h1020" alt="Tehran Motors" class="car-image">
+        <h2 id="inventory">Inventory</h2>
+        <div class="inventory">
+            <img src="[car1]tmimg.png" alt="Car 1">
+            <img src="[car2]tmimg.png" alt="Car 2">
+            <img src="[car3]tmimg.png" alt="Car 3">
+            <!-- Add more images as needed -->
+        </div>
     </main>
     <footer>
         <p>&copy; 2024 Tehran Motors</p>
     </footer>
 </body>
 </html>
+
