@@ -16,8 +16,7 @@
             background: #fff;
             padding: 1em;
             display: flex;
-            justify-content: space-between; /* Adjusted for logo */
-            align-items: center; /* Center align items vertically */
+            justify-content: center;
             box-shadow: 0 1px 5px rgba(0,0,0,0.1);
         }
         nav a {
@@ -26,10 +25,7 @@
             text-decoration: none;
             font-size: 1em;
         }
-        nav img {
-            height: 50px; /* Adjust the size as needed */
-        }
-        .section {
+        section {
             padding: 2em;
             margin: 1em auto;
             max-width: 800px;
@@ -82,6 +78,15 @@
         .inventory img:hover {
             transform: scale(1.05);
         }
+        .visit-counter {
+            padding: 1em;
+            margin: 1em auto;
+            max-width: 800px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+        }
         footer {
             background: #111111;
             color: white;
@@ -96,16 +101,14 @@
         .show-footer {
             transform: translateY(0);
         }
+    </style>
 </head>
 <body>
     <nav>
-        <img src="logo.png" alt="Tehran Motors Logo"> <!-- Add your logo image here -->
-        <div>
-            <a href="#home">Home</a>
-            <a href="#inventory">Inventory</a>
-            <a href="#reserve">Reserve</a>
-            <a href="#contact">Contact</a>
-        </div>
+        <a href="#home">Home</a>
+        <a href="#inventory">Inventory</a>
+        <a href="#reserve">Reserve</a>
+        <a href="#contact">Contact</a>
     </nav>
     <section id="home" class="home">
         <h2 class="welcome-messagea">Welcome to Tehran Motors</h2>
@@ -121,7 +124,7 @@
     </section>
     <section id="map" class="map">
         <h2>Locations</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12992.867003393742!2d51.4243507!3d35.7005041!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e01301346a97f%3A0x1d1365805be0a4ac!2sPCPJ%2B42J%20District%207%2C%20Tehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sus!4v1680842952356!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12992.867003393742!2d51.4243507!3d35.7005041!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e01301346a97f%3A0x1d1365805be0a4ac!2sPCPJ%2B42J District%207%2C%20Tehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sus!4v1680842952356!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
     <section id="inventory" class="inventory">
         <h2>Our Inventory</h2>
@@ -136,8 +139,12 @@
     </section>
     <section id="reserve">
         <h2>Reserve Your Car</h2>
-        <p>Chosse your car from the list we have avalible and then press the button below:</p>
+        <p>Choose your car from the list we have available and then press the button below:</p>
         <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMVVzxzpvtLXPjRrtbQSpKgzjCLKlSklKFKdtFzPvxstnqMvTVBqkWxlGDPBkjXCsBpZmpg" target="_blank" class="reserve-link" style="display: inline-block; margin-top: 2em; padding: 1em 2em; background-color: #1E3D59; color: white; text-decoration: none; border-radius: 4px; font-size: 1.2em; transition: background-color 0.3s;">Reserve Now</a>
+    </section>
+    <section class="visit-counter">
+        <h2>Visitor Counter</h2>
+        <p>This page has been visited <span id="visit-count"></span> times.</p>
     </section>
     <section id="contact" class="contact">
         <h2>Contact Us</h2>
@@ -157,6 +164,14 @@
             } else {
                 footer.classList.remove('show-footer');
             }
+        });
+
+        // Simple visit counter script (this is just a placeholder, an actual counter would require server-side processing)
+        document.addEventListener('DOMContentLoaded', function() {
+            let visitCount = localStorage.getItem('visitCount') || 0;
+            visitCount++;
+            localStorage.setItem('visitCount', visitCount);
+            document.getElementById('visit-count').innerText = visitCount;
         });
     </script>
 </body>
