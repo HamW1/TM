@@ -16,7 +16,8 @@
             background: #fff;
             padding: 1em;
             display: flex;
-            justify-content: center;
+            justify-content: space-between; /* Adjusted for logo */
+            align-items: center; /* Center align items vertically */
             box-shadow: 0 1px 5px rgba(0,0,0,0.1);
         }
         nav a {
@@ -25,7 +26,10 @@
             text-decoration: none;
             font-size: 1em;
         }
-        section {
+        nav img {
+            height: 50px; /* Adjust the size as needed */
+        }
+        .section {
             padding: 2em;
             margin: 1em auto;
             max-width: 800px;
@@ -92,14 +96,16 @@
         .show-footer {
             transform: translateY(0);
         }
-    </style>
 </head>
 <body>
     <nav>
-        <a href="#home">Home</a>
-        <a href="#inventory">Inventory</a>
-        <a href="#reserve">Reserve</a>
-        <a href="#contact">Contact</a>
+        <img src="logo.png" alt="Tehran Motors Logo"> <!-- Add your logo image here -->
+        <div>
+            <a href="#home">Home</a>
+            <a href="#inventory">Inventory</a>
+            <a href="#reserve">Reserve</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
     <section id="home" class="home">
         <h2 class="welcome-messagea">Welcome to Tehran Motors</h2>
