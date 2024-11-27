@@ -50,10 +50,10 @@
             display: block;
             margin: 1em auto;
         }
-        .welcome-message {
+        .welcome-messagea {
             font-size: 3em; /* 3 times larger font size */
         }
-        .welcome-message {
+        .welcome-messageb {
             font-size: 1.5em; /* 3 times larger font size */
         }
         .about-us {
@@ -63,6 +63,13 @@
             margin: 2em auto;
             max-width: 800px;
             color: #333; /* Text color for readability */
+            display: flex;
+            align-items: center;
+        }
+        .about-us img {
+            width: 150px; /* Adjust the size as needed */
+            margin-right: 1em;
+            border-radius: 8px; /* Optional: Rounded corners for the image */
         }
         footer {
             background: #1E3D59;
@@ -86,13 +93,16 @@
         <a href="contact.html">Contact</a>
     </nav>
     <main>
-        <h2 class="welcome-message">Welcome to Tehran Motors</h2>
-        <p class="welcome-message">Your trusted car dealership with a wide range of vehicles to suit all your needs.</p>
+        <h2 class="welcome-messagea">Welcome to Tehran Motors</h2>
+        <p class="welcome-messageb">Your trusted car dealership with a wide range of vehicles to suit all your needs.</p>
         <img src="https://lh3.googleusercontent.com/p/AF1QipOLInPin6-cTBQNeIVd-ThLilm764vFnS5nRWr7=s1360-w1360-h1020" alt="Tehran Motors" class="car-image">
         <div class="about-us">
-            <h2>About Us</h2>
-            <p>Founded in 1990, Tehran Motors has been a pioneer in the automotive industry in Iran. We pride ourselves on our customer-centric approach and offer a wide selection of high-quality vehicles to meet the diverse needs of our clients. Our team of experienced professionals is dedicated to providing exceptional service, ensuring that every customer drives away satisfied.</p>
-            <p>Whether you're looking for a new car, a reliable pre-owned vehicle, or expert maintenance and repair services, Tehran Motors is your go-to destination. Visit us today and experience the difference that sets us apart from the rest.</p>
+            <img src="https://lh3.googleusercontent.com/p/AF1QipOLInPin6-cTBQNeIVd-ThLilm764vFnS5nRWr7=s1360-w1360-h1020" alt="About Us Image"> <!-- Replace with your image URL -->
+            <div>
+                <h2>About Us</h2>
+                <p>Founded in 1990, Tehran Motors has been a pioneer in the automotive industry in Iran. We pride ourselves on our customer-centric approach and offer a wide selection of high-quality vehicles to meet the diverse needs of our clients. Our team of experienced professionals is dedicated to providing exceptional service, ensuring that every customer drives away satisfied.</p>
+                <p>Whether you're looking for a new car, a reliable pre-owned vehicle, or expert maintenance and repair services, Tehran Motors is your go-to destination. Visit us today and experience the difference that sets us apart from the rest.</p>
+            </div>
         </div>
     </main>
     <footer>
