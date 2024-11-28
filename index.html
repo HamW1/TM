@@ -11,6 +11,7 @@
             padding: 0;
             background-color: #f4f4f9;
             color: #333;
+            overflow-x: hidden;
         }
         nav {
             background: #fff;
@@ -18,55 +19,75 @@
             display: flex;
             justify-content: center;
             box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
         }
         nav a {
             color: #333;
             margin: 0 1em;
             text-decoration: none;
             font-size: 1em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #007BFF;
         }
         section {
             padding: 2em;
             margin: 1em auto;
             max-width: 800px;
             text-align: center;
+            animation: fadeInUp 0.5s ease-out;
         }
         .home {
-            background-image: url('https://cdn.bama.ir/uploads/BamaImages/Corporations/corporationbanner_637502025101994166.jpg'); /* Replace with your image URL */
+            background-image: url('https://cdn.bama.ir/uploads/BamaImages/Corporations/corporationbanner_637502025101994166.jpg'); 
             background-size: cover;
             background-position: center;
             border-radius: 8px;
-            color: white; /* Change text color to make it readable */
+            color: white;
+            padding: 3em 1em;
         }
         .car-image {
             width: 100%;
             max-width: 600px;
             display: block;
             margin: 1em auto;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .car-image:hover {
+            transform: scale(1.1);
         }
         .welcome-messagea {
-            font-size: 3em; /* 3 times larger font size */
+            font-size: 3em;
+            animation: fadeInDown 1s ease-out;
         }
         .welcome-messageb {
-            font-size: 1.5em; /* 3 times larger font size */
+            font-size: 1.5em;
+            animation: fadeInDown 1.2s ease-out;
         }
         .about-us {
-            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+            background: rgba(255, 255, 255, 0.8); 
             padding: 1em;
             border-radius: 8px;
             margin: 2em auto;
-            color: #333; /* Text color for readability */
+            color: #333; 
             display: flex;
             align-items: center;
+            animation: fadeInLeft 1s ease-out;
         }
         .about-us img {
-            width: 150px; /* Adjust the size as needed */
+            width: 150px;
             margin-right: 1em;
-            border-radius: 8px; /* Optional: Rounded corners for the image */
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .about-us img:hover {
+            transform: rotate(10deg);
         }
         .inventory, .contact {
             background: #fff;
             border-radius: 8px;
+            padding: 2em;
         }
         .inventory img {
             width: 100%;
@@ -76,16 +97,7 @@
             margin: 0.5em;
         }
         .inventory img:hover {
-            transform: scale(1.05);
-        }
-        .visit-counter {
-            padding: 1em;
-            margin: 1em auto;
-            max-width: 800px;
-            text-align: center;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            transform: scale(1.1) rotate(5deg);
         }
         footer {
             background: #111111;
@@ -101,6 +113,46 @@
         .show-footer {
             transform: translateY(0);
         }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -114,7 +166,7 @@
         <h2 class="welcome-messagea">Welcome to Tehran Motors</h2>
         <p class="welcome-messageb">Your trusted car dealership with a wide range of vehicles to suit all your needs.</p>
         <div class="about-us">
-            <img src="https://lh3.googleusercontent.com/p/AF1QipOLInPin6-cTBQNeIVd-ThLilm764vFnS5nRWr7=s1360-w1360-h1020" alt="About Us Image"> <!-- Replace with your image URL -->
+            <img src="https://lh3.googleusercontent.com/p/AF1QipOLInPin6-cTBQNeIVd-ThLilm764vFnS5nRWr7=s1360-w1360-h1020" alt="About Us Image"> 
             <div>
                 <h2>About Us</h2>
                 <p>Founded in 1990, Tehran Motors has been a pioneer in the automotive industry in Iran. We pride ourselves on our customer-centric approach and offer a wide selection of high-quality vehicles to meet the diverse needs of our clients. Our team of experienced professionals is dedicated to providing exceptional service, ensuring that every customer drives away satisfied.</p>
@@ -133,17 +185,12 @@
             <img src="[car3]tmimg.png" alt="Car 3">
             <img src="[car4]tmimg.png" alt="Car 4">
             <img src="[car5]tmimg.png" alt="Car 5">
-            <!-- Add more images as needed -->
         </div>
     </section>
     <section id="reserve">
         <h2>Reserve Your Car</h2>
         <p>Choose your car from the list we have available and then press the button below:</p>
-        <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMVVzxzpvtLXPjRrtbQSpKgzjCLKlSklKFKdtFzPvxstnqMvTVBqkWxlGDPBkjXCsBpZmpg" target="_blank" class="reserve-link" style="display: inline-block; margin-top: 2em; padding: 1em 2em; background-color: #1E3D59; color: white; text-decoration: none; border-radius: 4px; font-size: 1.2em; transition: background-color 0.3s;">Reserve Now</a>
-    </section>
-    <section class="visit-counter">
-        <h2>Visitor Counter</h2>
-        <p>This page has been visited <span id="visit-count"></span> times.</p>
+        <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMVVzxzpvtLXPjRrtbQSpKgzjCLKlSklKFKdtFzPvxstnqMvTVBqkWxlGDPBkjXCsBpZmpg" target="_blank" class="reserve-link" style="display: inline-block; margin-top: 2em; padding: 1em 2em; background-color: #1E3D59; color: white; text-decoration: none; border-radius: 4px; font-size: 1.2em; transition: background-color 0.3s, transform 0.3s;">Reserve Now</a>
     </section>
     <section id="contact" class="contact">
         <h2>Contact Us</h2>
@@ -155,23 +202,5 @@
     <footer>
         &copy; 2024 Tehran Motors
     </footer>
-    <script>
-        window.addEventListener('scroll', function() {
-            const footer = document.querySelector('footer');
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                footer.classList.add('show-footer');
-            } else {
-                footer.classList.remove('show-footer');
-            }
-        });
-
-        // Simple visit counter script (this is just a placeholder, an actual counter would require server-side processing)
-        document.addEventListener('DOMContentLoaded', function() {
-            let visitCount = localStorage.getItem('visitCount') || 0;
-            visitCount++;
-            localStorage.setItem('visitCount', visitCount);
-            document.getElementById('visit-count').innerText = visitCount;
-        });
-    </script>
 </body>
 </html>
