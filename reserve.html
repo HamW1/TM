@@ -60,7 +60,7 @@
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
         (function() {
-            emailjs.init("YOUR_EMAILJS_USER_ID");
+            emailjs.init("JXPnrQhvsk7kFfKZj");
         })();
 
         document.getElementById('reserveForm').addEventListener('submit', function(event) {
@@ -72,7 +72,7 @@
                 message: document.getElementById('message').value
             };
 
-            emailjs.send('YOUR_EMAILJS_SERVICE_ID', 'YOUR_EMAILJS_TEMPLATE_ID', templateParams)
+            emailjs.send('service_0vb4kfv', 'template_cevpivp', templateParams)
                 .then(function(response) {
                     console.log('SUCCESS!', response.status, response.text);
                     alert('Reservation request sent successfully!');
