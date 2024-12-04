@@ -99,6 +99,42 @@
         .inventory img:hover {
             transform: scale(1.1) rotate(5deg);
         }
+        .reserve-box {
+            background: #fff;
+            border-radius: 8px;
+            padding: 2em;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            margin: 2em auto;
+            text-align: left;
+            max-width: 600px;
+        }
+        .reserve-box h2 {
+            color: #007BFF;
+        }
+        .reserve-box label {
+            display: block;
+            margin: 1em 0 0.5em 0;
+            font-weight: bold;
+        }
+        .reserve-box input, .reserve-box textarea {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .reserve-box button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .reserve-box button:hover {
+            background: #0056b3;
+        }
         footer {
             background: #111111;
             color: white;
@@ -187,15 +223,41 @@
             <img src="[car5]tmimg.png" alt="Car 5">
         </div>
     </section>
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <p>Email: tehran.motors.tm@gmail.com</p>
-        <p>Phone: +98 912 239 3330</p>
-        <p>Phone: +21 8821 0205</p>
-        <p>Address: PCPJ+42J District 7, Tehran, Tehran Province, Iran</p>
+    <section id="reserve" class="reserve-box">
+        <h2>Reserve Your Car</h2>
+        <form action="/saveReservation" method="post">
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full-name" required>
+            <label for="car-model">Car Model:</label>
+            <input type="text" id="car-model" name="car-model" required>
+            <label for="phone-number">Phone Number:</label>
+            <input type="tel" id="phone-number" name="phone-number" required>
+            <label for="comment">Comment:</label>
+            <textarea id="comment" name="comment"></textarea>
+            <button type="submit">Reserve</button>
+        </form>
     </section>
     <footer>
         &copy; 2024 Tehran Motors
     </footer>
+    <script>
+        // JavaScript to handle form submission and save data to a folder
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const fullName = document.getElementById('full-name').value;
+            const carModel = document.getElementById('car-model').value;
+            const phoneNumber = document.getElementById('phone-number').value;
+            const comment = document.getElementById('comment').value;
+            const data = `Full Name: ${fullName}\nCar Model: ${carModel}\nPhone Number: ${phoneNumber}\nComment: ${comment}`;
+            const blob = new Blob([data], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `${fullName}.txt`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            alert('Reservation saved successfully!');
+        });
+    </script>
 </body>
 </html>
