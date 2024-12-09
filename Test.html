@@ -201,10 +201,10 @@
     </section>
     <section id="map" class="map">
         <h2>Locations</h2>
-        <p class="typewriter-text"><span id="changing-text"></span></p>
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12992.867003393742!2d51.4243507!3d35.7005041!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e01301346a97f%3A0x1d1365805be0a4ac!2sPCPJ%2B42J District%207%2C%20Tehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sus!4v1680842952356!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>    
     <section id="inventory" class="inventory">
+        <p class="typewriter-text"><span id="changing-text"></span></p>
         <h2>Our Inventory</h2>
         <div class="inventory">
             <img src="[car1]tmimg.png" alt="Car 1">
@@ -238,16 +238,20 @@
         let i = 0;
         let j = 0;
         let isDeleting = false;
+    
         function type() {
             const changingText = document.getElementById("changing-text");
             let currentWord = words[i];
+    
             if (isDeleting) {
                 if (changingText.textContent === "") {
                     isDeleting = false;
                     i = (i + 1) % words.length;
                     j = 0;
-                    if (i === 0) {
-                        currentWord = "Tehran Motors";
+                    if (currentWord === "Tehran Motors") {
+                        setTimeout(() => { type(); }, delayBeforeDeletingSentence);
+                    } else {
+                        type();
                     }
                 } else {
                     changingText.textContent = currentWord.substring(0, changingText.textContent.length - 1);
@@ -266,9 +270,10 @@
                 }
             }
         }
+    
         document.addEventListener("DOMContentLoaded", function() {
             setTimeout(type, typingSpeed + 250);
         });
-    </script>
+    </script>    
 </body>
 </html>
