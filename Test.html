@@ -201,8 +201,8 @@
     </section>
     <section id="map" class="map">
         <h2>Locations</h2>
-        <p class="typewriter-text">We sell <span id="changing-word" class="show">luxury</span> to people.</p>
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12992.867003393742!2d51.4243507!3d35.7005041!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e01301346a97f%3A0x1d1365805be0a4ac!2sPCPJ%2B42J District%207%2C%20Tehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sus!4v1680842952356!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p class="typewriter-text">We sell <span id="changing-word" class="show">luxury</span> to people.</p>
     </section>
     <section id="inventory" class="inventory">
         <h2>Our Inventory</h2>
@@ -230,7 +230,7 @@
         &copy; 2024 Tehran Motors
     </footer>
     <script>
-        const words = ["luxury", "adventure", "performance", "reliability", "dreams", "style", "innovation", "comfort", "excitement", "freedom"];
+        const words = ["luxury", "performance", "reliability", "your dreams", "style", "innovation", "comfort", "excitement"];
         let i = 0;
         setInterval(() => {
             const changingWord = document.getElementById("changing-word");
@@ -240,7 +240,7 @@
                 changingWord.classList.add("show");
                 i = (i + 1) % words.length;
             }, 500);
-        }, 2000);
+        }, 5000);
     </script>
 </body>
 </html>
