@@ -48,25 +48,13 @@
             color: white;
             padding: 3em 1em;
         }
-        .rotating-text {
+        .typewriter-text {
             font-size: 1.5em;
             margin-bottom: 1em;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: .15em solid orange;
         }
-        .rotating-text span {
-            display: inline-block;
-            animation: rotate 10s infinite;
-        }
-        @keyframes rotate {
-            0% { opacity: 0; }
-            10% { opacity: 1; }
-            20% { opacity: 1; }
-            30% { opacity: 0; }
-            100% { opacity: 0; }
-        }
-        .rotating-text span:nth-child(2) { animation-delay: 2s; }
-        .rotating-text span:nth-child(3) { animation-delay: 4s; }
-        .rotating-text span:nth-child(4) { animation-delay: 6s; }
-        .rotating-text span:nth-child(5) { animation-delay: 8s; }
         .car-image {
             width: 100%;
             max-width: 600px;
@@ -204,7 +192,7 @@
     </section>
     <section id="map" class="map">
         <h2>Locations</h2>
-        <p class="rotating-text">We sell <span>luxury</span><span>adventure</span><span>performance</span><span>reliability</span><span>dreams</span><span>style</span><span>innovation</span><span>comfort</span><span>excitement</span><span>freedom</span> to people.</p>
+        <p id="typewriter" class="typewriter-text">We sell <span id="changing-word">luxury</span> to people.</p>
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12992.867003393742!2d51.4243507!3d35.7005041!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e01301346a97f%3A0x1d1365805be0a4ac!2sPCPJ%2B42J District%207%2C%20Tehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sus!4v1680842952356!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
     <section id="inventory" class="inventory">
@@ -219,21 +207,26 @@
     </section>
     <section id="reserve">
         <h2>Reserve Your Car</h2>
-        <section id="reserve">
-            <h2>Reserve Your Car</h2>
-            <p>Choose your car from the list we have available and then press the button below:</p>
-            <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMVVzxzpvtLXPjRrtbQSpKgzjCLKlSklKFKdtFzPvxstnqMvTVBqkWxlGDPBkjXCsBpZmpg" target="_blank" class="reserve-link" style="display: inline-block; margin-top: 2em; padding: 1em 2em; background-color: #1E3D59; color: white; text-decoration: none; border-radius: 4px; font-size: 1.2em; transition: background-color 0.3s, transform 0.3s;">Reserve Now</a>
-        </section>
-        <section id="contact" class="contact">
-            <h2>Contact Us</h2>
-            <p>Email: tehran.motors.tm@gmail.com</p>
-            <p>Phone: +98 912 239 3330</p>
-            <p>Phone: +21 8821 0205</p>
-            <p>Address: PCPJ+42J District 7, Tehran, Tehran Province, Iran</p>
-        </section>
-        <footer>
-            &copy; 2024 Tehran Motors
-        </footer>
-    </body>
-    </html>
-    
+        <p>Choose your car from the list we have available and then press the button below:</p>
+        <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMVVzxzpvtLXPjRrtbQSpKgzjCLKlSklKFKdtFzPvxstnqMvTVBqkWxlGDPBkjXCsBpZmpg" target="_blank" class="reserve-link" style="display: inline-block; margin-top: 2em; padding: 1em 2em; background-color: #1E3D59; color: white; text-decoration: none; border-radius: 4px; font-size: 1.2em; transition: background-color 0.3s, transform 0.3s;">Reserve Now</a>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: tehran.motors.tm@gmail.com</p>
+        <p>Phone: +98 912 239 3330</p>
+        <p>Phone: +21 8821 0205</p>
+        <p>Address: PCPJ+42J District 7, Tehran, Tehran Province, Iran</p>
+    </section>
+    <footer>
+        &copy; 2024 Tehran Motors
+    </footer>
+    <script>
+        const words = ["luxury", "performance", "reliability", "your dreams", "style", "innovation", "comfort", "excitement"];
+        let i = 0;
+        const interval = setInterval(() => {
+            document.getElementById("changing-word").textContent = words[i];
+            i = (i + 1) % words.length;
+        }, 2000);
+    </script>
+</body>
+</html>
