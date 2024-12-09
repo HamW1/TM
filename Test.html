@@ -54,6 +54,15 @@
             white-space: nowrap;
             overflow: hidden;
             border-right: .15em solid orange;
+            display: inline-block;
+        }
+        .typewriter-text span {
+            display: inline-block;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .typewriter-text span.show {
+            opacity: 1;
         }
         .car-image {
             width: 100%;
@@ -192,7 +201,7 @@
     </section>
     <section id="map" class="map">
         <h2>Locations</h2>
-        <p id="typewriter" class="typewriter-text">We sell <span id="changing-word">luxury</span> to people.</p>
+        <p class="typewriter-text">We sell <span id="changing-word" class="show">luxury</span> to people.</p>
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12992.867003393742!2d51.4243507!3d35.7005041!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e01301346a97f%3A0x1d1365805be0a4ac!2sPCPJ%2B42J District%207%2C%20Tehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sus!4v1680842952356!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
     <section id="inventory" class="inventory">
@@ -221,11 +230,16 @@
         &copy; 2024 Tehran Motors
     </footer>
     <script>
-        const words = ["luxury", "performance", "reliability", "your dreams", "style", "innovation", "comfort", "excitement"];
+        const words = ["luxury", "adventure", "performance", "reliability", "dreams", "style", "innovation", "comfort", "excitement", "freedom"];
         let i = 0;
-        const interval = setInterval(() => {
-            document.getElementById("changing-word").textContent = words[i];
-            i = (i + 1) % words.length;
+        setInterval(() => {
+            const changingWord = document.getElementById("changing-word");
+            changingWord.classList.remove("show");
+            setTimeout(() => {
+                changingWord.textContent = words[i];
+                changingWord.classList.add("show");
+                i = (i + 1) % words.length;
+            }, 500);
         }, 2000);
     </script>
 </body>
