@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehran Motors</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            overflow-x: hidden;
+        }
+        nav {
+            background: #fff;
+            padding: 1em;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+        }
+        nav a {
+            color: #333;
+            margin: 0 1em;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #007BFF;
+        }
+        section {
+            padding: 2em;
+            margin: 1em auto;
+            max-width: 800px;
+            text-align: center;
+            animation: fadeInUp 0.5s ease-out;
+        }
+        .home {
+            background-image: url('https://cdn.bama.ir/uploads/BamaImages/Corporations/corporationbanner_637502025101994166.jpg'); 
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            color: white;
+            padding: 3em 1em;
+        }
+        .car-image {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+            margin: 1em auto;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .car-image:hover {
+            transform: scale(1.1);
+        }
+        .welcome-messagea {
+            font-size: 3em;
+            animation: fadeInDown 1s ease-out;
+        }
+        .welcome-messageb {
+            font-size: 1.5em;
+            animation: fadeInDown 1.2s ease-out;
+        }
+        .about-us {
+            background: rgba(255, 255, 255, 0.8); 
+            padding: 1em;
+            border-radius: 8px;
+            margin: 2em auto;
+            color: #333; 
+            display: flex;
+            align-items: center;
+            animation: fadeInLeft 1s ease-out;
+        }
+        .about-us img {
+            width: 150px;
+            margin-right: 1em;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .about-us img:hover {
+            transform: rotate(10deg);
+        }
+        .inventory, .contact {
+            background: #fff;
+            border-radius: 8px;
+            padding: 2em;
+        }
+        .inventory img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 4px;
+            transition: transform 0.2s;
+            margin: 0.5em;
+        }
+        .inventory img:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+        footer {
+            background: #111111;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            width: 100%;
+            bottom: 0;
+            position: fixed;
+            transform: translateY(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .show-footer {
+            transform: translateY(0);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#inventory">Inventory</a>
+        <a href="#reserve">Reserve</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="home" class="home">
+        <h2 class="welcome-messagea">Welcome to Tehran Motors</h2>
+        <p class="welcome-messageb">Your trusted car dealership with a wide range of vehicles to suit all your needs.</p>
+        <div class="about-us">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipOLInPin6-cTBQNeIVd-ThLilm764vFnS5nRWr7=s1360-w1360-h1020" alt="About Us Image"> 
+            <div>
+                <h2>About Us</h2>
+                <p>Founded in 1990, Tehran Motors has been a pioneer in the automotive industry in Iran. We pride ourselves on our customer-centric approach and offer a wide selection of high-quality vehicles to meet the diverse needs of our clients. Our team of experienced professionals is dedicated to providing exceptional service, ensuring that every customer drives away satisfied.</p>
+            </div>
+        </div>
+    </section>
+    <section id="map" class="map">
+        <h2>Locations</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12992.867003393742!2d51.4243507!3d35.7005041!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e01301346a97f%3A0x1d1365805be0a4ac!2sPCPJ%2B42J District%207%2C%20Tehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sus!4v1680842952356!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <section id="inventory" class="inventory">
+        <h2>Our Inventory</h2>
+        <div class="inventory">
+            <img src="[car1]tmimg.png" alt="Car 1">
+            <img src="[car2]tmimg.png" alt="Car 2">
+            <img src="[car3]tmimg.png" alt="Car 3">
+            <img src="[car4]tmimg.png" alt="Car 4">
+            <img src="[car5]tmimg.png" alt="Car 5">
+        </div>
+    </section>
+    <section id="reserve">
+        <h2>Reserve Your Car</h2>
+        <p>Choose your car from the list we have available and then press the button below:</p>
+        <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMVVzxzpvtLXPjRrtbQSpKgzjCLKlSklKFKdtFzPvxstnqMvTVBqkWxlGDPBkjXCsBpZmpg" target="_blank" class="reserve-link" style="display: inline-block; margin-top: 2em; padding: 1em 2em; background-color: #1E3D59; color: white; text-decoration: none; border-radius: 4px; font-size: 1.2em; transition: background-color 0.3s, transform 0.3s;">Reserve Now</a>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: tehran.motors.tm@gmail.com</p>
+        <p>Phone: +98 912 239 3330</p>
+        <p>Phone: +21 8821 0205</p>
+        <p>Address: PCPJ+42J District 7, Tehran, Tehran Province, Iran</p>
+    </section>
+    <footer>
+        &copy; 2024 Tehran Motors
+    </footer>
+</body>
+</html>
