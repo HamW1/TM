@@ -9,29 +9,29 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: #121212;
+            color: #e0e0e0;
             overflow-x: hidden;
             opacity: 0;
             animation: fadeIn 2s ease-in forwards;
         }
         nav {
-            background: #fff;
+            background: #1e1e1e;
             padding: 1em;
             display: flex;
             justify-content: center;
-            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 5px rgba(0,0,0,0.5);
             transition: background-color 0.3s;
         }
         nav a {
-            color: #333;
+            color: #e0e0e0;
             margin: 0 1em;
             text-decoration: none;
             font-size: 1em;
             transition: color 0.3s;
         }
         nav a:hover {
-            color: #007BFF;
+            color: #bb86fc;
         }
         section {
             padding: 2em;
@@ -45,7 +45,7 @@
             background-size: cover;
             background-position: center;
             border-radius: 8px;
-            color: white;
+            color: #e0e0e0;
             padding: 3em 1em;
         }
         .typewriter-text {
@@ -53,9 +53,11 @@
             margin-bottom: 1em;
             white-space: nowrap;
             overflow: hidden;
-            border-right: .15em solid orange;
+            border-right: .15em solid #bb86fc;
             display: inline-block;
-        }
+            color: #ffffff; /* White text */
+}
+
         .typewriter-text span {
             display: inline-block;
             opacity: 0;
@@ -84,11 +86,11 @@
             animation: fadeInDown 1.2s ease-out;
         }
         .about-us {
-            background: rgba(255, 255, 255, 0.8); 
+            background: rgba(65, 65, 65, 0.797); 
             padding: 1em;
             border-radius: 8px;
             margin: 2em auto;
-            color: #333; 
+            color: #ffffff; 
             display: flex;
             align-items: center;
             animation: fadeInLeft 1s ease-out;
@@ -103,7 +105,7 @@
             transform: scale(1.1);
         }
         .inventory, .contact {
-            background: #fff;
+            background: #1e1e1e;
             border-radius: 8px;
             padding: 2em;
         }
@@ -118,8 +120,8 @@
             transform: scale(1.1);
         }
         footer {
-            background: #111111;
-            color: white;
+            background: #1e1e1e;
+            color: #e0e0e0;
             text-align: center;
             padding: 1em 0;
             width: 100%;
@@ -204,8 +206,8 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12992.867003393742!2d51.4243507!3d35.7005041!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e01301346a97f%3A0x1d1365805be0a4ac!2sPCPJ%2B42J District%207%2C%20Tehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sus!4v1680842952356!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
     <section id="inventory" class="inventory">
+        <p class="typewriter-text"><span id="changing-text"></span></p>
         <h2>Our Inventory</h2>
-        <p class="typewriter-text">We sell <span id="changing-word" class="show">luxury</span> to people.</p>
         <div class="inventory">
             <img src="[car1]tmimg.png" alt="Car 1">
             <img src="[car2]tmimg.png" alt="Car 2">
@@ -217,7 +219,7 @@
     <section id="reserve">
         <h2>Reserve Your Car</h2>
         <p>Choose your car from the list we have available and then press the button below:</p>
-        <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMVVzxzpvtLXPjRrtbQSpKgzjCLKlSklKFKdtFzPvxstnqMvTVBqkWxlGDPBkjXCsBpZmpg" target="_blank" class="reserve-link" style="display: inline-block; margin-top: 2em; padding: 1em 2em; background-color: #1E3D59; color: white; text-decoration: none; border-radius: 4px; font-size: 1.2em; transition: background-color 0.3s, transform 0.3s;">Reserve Now</a>
+        <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMVVzxzpvtLXPjRrtbQSpKgzjCLKlSklKFKdtFzPvxstnqMvTVBqkWxlGDPBkjXCsBpZmpg" target="_blank" class="reserve-link" style="display: inline-block; margin-top: 2em; padding: 1em 2em; background-color: #bb86fc; color: white; text-decoration: none; border-radius: 4px; font-size: 1.2em; transition: background-color 0.3s, transform 0.3s;">Reserve Now</a>
     </section>
     <section id="contact" class="contact">
         <h2>Contact Us</h2>
@@ -230,17 +232,50 @@
         &copy; 2024 Tehran Motors
     </footer>
     <script>
-        const words = ["luxury", "performance", "reliability", "style", "innovation", "comfort", "excitement"];
+        const words = ["luxury", "adventure", "performance", "reliability", "Tehran Motors", "style", "innovation", "comfort", "excitement", "Tehran Motors"];
+        const typingSpeed = 100;
+        const erasingSpeed = 50;
+        const delayBetweenWords = 2000;
+        const delayBeforeDeletingSentence = 3000;
         let i = 0;
-        setInterval(() => {
-            const changingWord = document.getElementById("changing-word");
-            changingWord.classList.remove("show");
-            setTimeout(() => {
-                changingWord.textContent = words[i];
-                changingWord.classList.add("show");
-                i = (i + 1) % words.length;
-            }, 500);
-        }, 5000);
+        let j = 0;
+        let isDeleting = false;
+
+        function type() {
+            const changingText = document.getElementById("changing-text");
+            let currentWord = words[i];
+
+            if (isDeleting) {
+                if (changingText.textContent === "") {
+                    isDeleting = false;
+                    i = (i + 1) % words.length;
+                    j = 0;
+                    if (currentWord === "Tehran Motors") {
+                        setTimeout(() => { type(); }, delayBeforeDeletingSentence);
+                    } else {
+                        type();
+                    }
+                } else {
+                    changingText.textContent = currentWord.substring(0, changingText.textContent.length - 1);
+                    setTimeout(type, erasingSpeed);
+                }
+            } else {
+                if (j < currentWord.length) {
+                    changingText.textContent += currentWord.charAt(j);
+                    j++;
+                    setTimeout(type, typingSpeed);
+                } else {
+                    setTimeout(() => {
+                        isDeleting = true;
+                        type();
+                    }, delayBetweenWords);
+                }
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(type, typingSpeed + 250);
+        });
     </script>
 </body>
 </html>
