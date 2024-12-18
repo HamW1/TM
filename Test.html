@@ -15,6 +15,7 @@
             opacity: 0;
             animation: fadeIn 2s ease-in forwards;
         }
+
         nav {
             background: #1e1e1e;
             padding: 1em;
@@ -23,16 +24,19 @@
             box-shadow: 0 1px 5px rgba(0,0,0,0.5);
             transition: background-color 0.3s;
         }
-        nav a {
-            color: #e0e0e0;
-            margin: 0 1em;
-            text-decoration: none;
-            font-size: 1em;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #bb86fc;
-        }
+
+            nav a {
+                color: #e0e0e0;
+                margin: 0 1em;
+                text-decoration: none;
+                font-size: 1em;
+                transition: color 0.3s;
+            }
+
+                nav a:hover {
+                    color: #bb86fc;
+                }
+
         section {
             padding: 2em;
             margin: 1em auto;
@@ -40,14 +44,16 @@
             text-align: center;
             animation: fadeInUp 0.5s ease-out;
         }
+
         .home {
-            background-image: url('https://cdn.bama.ir/uploads/BamaImages/Corporations/corporationbanner_637502025101994166.jpg'); 
+            background-image: url('https://cdn.bama.ir/uploads/BamaImages/Corporations/corporationbanner_637502025101994166.jpg');
             background-size: cover;
             background-position: center;
             border-radius: 8px;
             color: #e0e0e0;
             padding: 3em 1em;
         }
+
         .typewriter-text {
             font-size: 1.5em;
             margin-bottom: 1em;
@@ -56,16 +62,18 @@
             border-right: .15em solid #bb86fc;
             display: inline-block;
             color: #ffffff; /* White text */
-}
+        }
 
-        .typewriter-text span {
-            display: inline-block;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        .typewriter-text span.show {
-            opacity: 1;
-        }
+            .typewriter-text span {
+                display: inline-block;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            }
+
+                .typewriter-text span.show {
+                    opacity: 1;
+                }
+
         .car-image {
             width: 100%;
             max-width: 600px;
@@ -74,51 +82,61 @@
             border-radius: 8px;
             transition: transform 0.3s;
         }
-        .car-image:hover {
-            transform: scale(1.1);
-        }
+
+            .car-image:hover {
+                transform: scale(1.1);
+            }
+
         .welcome-messagea {
             font-size: 3em;
             animation: fadeInDown 1s ease-out;
         }
+
         .welcome-messageb {
             font-size: 1.5em;
             animation: fadeInDown 1.2s ease-out;
         }
+
         .about-us {
-            background: rgba(65, 65, 65, 0.797); 
+            background: rgba(65, 65, 65, 0.797);
             padding: 1em;
             border-radius: 8px;
             margin: 2em auto;
-            color: #ffffff; 
+            color: #ffffff;
             display: flex;
             align-items: center;
             animation: fadeInLeft 1s ease-out;
         }
-        .about-us img {
-            width: 150px;
-            margin-right: 1em;
-            border-radius: 8px;
-            transition: transform 0.3s;
-        }
-        .about-us img:hover {
-            transform: scale(1.1);
-        }
+
+            .about-us img {
+                width: 150px;
+                margin-right: 1em;
+                border-radius: 8px;
+                transition: transform 0.3s;
+            }
+
+                .about-us img:hover {
+                    transform: scale(1.1);
+                }
+
         .inventory, .contact {
             background: #1e1e1e;
             border-radius: 8px;
             padding: 2em;
         }
-        .inventory img {
-            width: 100%;
-            max-width: 200px;
-            border-radius: 4px;
-            transition: transform 0.2s;
-            margin: 0.5em;
-        }
-        .inventory img:hover {
-            transform: scale(1.1);
-        }
+
+            .inventory img {
+                width: 100%;
+                max-width: 200px;
+                border-radius: 4px;
+                transition: transform 0.2s;
+                margin: 0.5em;
+            }
+
+                .inventory img:hover {
+                    transform: scale(1.1);
+                }
+
         footer {
             background: #1e1e1e;
             color: #e0e0e0;
@@ -130,53 +148,64 @@
             transform: translateY(100%);
             transition: transform 0.3s ease-in-out;
         }
+
         .show-footer {
             transform: translateY(0);
         }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
         @keyframes fadeInDown {
             from {
                 opacity: 0;
                 transform: translateY(-20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
         @keyframes fadeInLeft {
             from {
                 opacity: 0;
                 transform: translateX(-20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
             }
         }
+
         @keyframes fadeInRight {
             from {
                 opacity: 0;
                 transform: translateX(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
             }
         }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -195,7 +224,7 @@
         <h2 class="welcome-messagea">Welcome to Tehran Motors</h2>
         <p class="welcome-messageb">Your trusted car dealership with a wide range of vehicles to suit all your needs.</p>
         <div class="about-us">
-            <img src="https://lh3.googleusercontent.com/p/AF1QipOLInPin6-cTBQNeIVd-ThLilm764vFnS5nRWr7=s1360-w1360-h1020" alt="About Us Image"> 
+            <img src="https://lh3.googleusercontent.com/p/AF1QipOLInPin6-cTBQNeIVd-ThLilm764vFnS5nRWr7=s1360-w1360-h1020" alt="About Us Image">
             <div>
                 <h2>About Us</h2>
                 <p>Founded in 1990, Tehran Motors has been a pioneer in the automotive industry in Iran. We pride ourselves on our customer-centric approach and offer a wide selection of high-quality vehicles to meet the diverse needs of our clients. Our team of experienced professionals is dedicated to providing exceptional service, ensuring that every customer drives away satisfied.</p>
@@ -228,6 +257,7 @@
         <p>Phone: +98 912 239 3330</p>
         <p>Phone: +98 21 8821 0205</p>
         <p>Address: PCPJ+42J District 7, Tehran, Tehran Province, Iran</p>
+        <p>V0.1</p>
     </section>
     <footer>
         &copy; 2024 Tehran Motors
@@ -274,7 +304,7 @@
             }
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             setTimeout(type, typingSpeed + 250);
         });
     </script>
